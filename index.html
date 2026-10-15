@@ -3,161 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#FBF9F7">
 <meta name="description" content="Proposta de criação e gestão do Instagram do Diretório Municipal do PT de São Miguel das Missões, em três pacotes por volume de publicações.">
-<meta property="og:title" content="Proposta de comunicação digital · Diretório PT São Miguel">
+<meta property="og:title" content="Proposta de comunicação digital para o Diretório PT de São Miguel">
 <meta property="og:description" content="Criação do perfil, estratégia, calendário, captação, edição e tráfego pago. Três pacotes: 5, 10 ou 15 publicações.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#FBF9F7">
 <title>Proposta PT São Miguel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
 <style>
   /*
-    Design read: proposta comercial para diretorio partidario municipal, lida no celular.
-    Linguagem trust-first, mas enxuta: o pedido foi menos clausula e mais entrega.
-    DESIGN_VARIANCE 4, MOTION_INTENSITY 2, VISUAL_DENSITY 4. Modo: redesign-overhaul de
-    estrutura com preservacao de voz. Tres faixas de preco por volume, lista de entrega
-    unica embaixo para os cartoes nao repetirem o mesmo conteudo.
-    Sem imagem por decisao: nao existe foto real do cliente. Entra depois da captacao.
+    Tema claro unico, por decisao do cliente. Sem bloco de tema escuro.
+    Cores escritas direto no valor, sem custom property, para extensao de
+    navegador nao conseguir sobrescrever a variavel e trocar o acento.
+    Vermelho #C4122F sobre #FBF9F7: contraste 5,8:1, passa AA.
   */
-  :root {
-    --ink: #17120F;
-    --ink-2: #5E534D;
-    --paper: #FBF9F7;
-    --surface: #FFFFFF;
-    --line: #E3DCD7;
-    --accent: #C4122F;
-    --on-accent: #FFFFFF;
-    --accent-soft: #FAE8EA;
-    --sans: "Geist", "Helvetica Neue", Arial, sans-serif;
-    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      color-scheme: dark;
-      --ink: #F3EEEA;
-      --ink-2: #ADA29B;
-      --paper: #141110;
-      --surface: #1D1917;
-      --line: #332C28;
-      --accent: #F2566A;
-      --on-accent: #141110;
-      --accent-soft: #2E1619;
-    }
-  }
-
-  :root[data-theme="dark"] {
-    color-scheme: dark;
-    --ink: #F3EEEA;
-    --ink-2: #ADA29B;
-    --paper: #141110;
-    --surface: #1D1917;
-    --line: #332C28;
-    --accent: #F2566A;
-    --on-accent: #141110;
-    --accent-soft: #2E1619;
-  }
+  html { color-scheme: only light; background: #FBF9F7; }
 
   body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--sans);
+    margin: 0;
+    background: #FBF9F7;
+    color: #17120F;
+    font-family: "Geist", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 16.5px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
+  img { max-width: 100%; }
 
   .wrap { max-width: 900px; margin: 0 auto; padding-inline: 22px; }
 
   /* ---------- barra ---------- */
   .bar {
     position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
-    background: color-mix(in srgb, var(--paper) 94%, transparent);
-    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+    background: rgba(251, 249, 247, 0.94);
+    backdrop-filter: blur(8px); border-bottom: 1px solid #E3DCD7;
   }
   .bar-in { max-width: 900px; margin: 0 auto; padding: 12px 22px; display: flex; align-items: center; gap: 14px; }
-  .bar-name { font-weight: 700; font-size: 14.5px; letter-spacing: -0.012em; margin-right: auto; }
+  .bar-name { font-weight: 700; font-size: 14.5px; letter-spacing: -0.012em; margin-right: auto; color: #17120F; }
+
   .cta {
     font-weight: 600; font-size: 13.5px; white-space: nowrap;
-    text-decoration: none; color: var(--on-accent, #FFFFFF); background: var(--accent, #C4122F);
+    text-decoration: none; color: #FFFFFF; background-color: #C4122F;
     padding: 9px 16px; border-radius: 3px;
     touch-action: manipulation;
-    -webkit-tap-highlight-color: color-mix(in srgb, var(--accent, #C4122F) 30%, transparent);
+    -webkit-tap-highlight-color: rgba(196, 18, 47, 0.3);
   }
-  .cta:hover { filter: brightness(1.1); }
+  .cta:link, .cta:visited { color: #FFFFFF; background-color: #C4122F; }
+  .cta:hover { background-color: #A80F28; }
   .cta:active { transform: translateY(1px); }
 
   /* ---------- abertura ---------- */
   header.top { padding-block: 62px 16px; }
-  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--accent, #C4122F); margin-bottom: 20px; }
+  .eyebrow {
+    font-family: "Geist Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 12px; letter-spacing: 0.04em; color: #C4122F; margin-bottom: 20px;
+  }
   h1 {
     font-weight: 800; font-size: clamp(2rem, 5.6vw, 3rem);
-    line-height: 1.05; letter-spacing: -0.033em;
+    line-height: 1.05; letter-spacing: -0.033em; color: #17120F;
     text-wrap: balance; margin: 0 0 20px; max-width: 19ch;
   }
-  .lede { font-size: clamp(1.05rem, 2.2vw, 1.2rem); max-width: 48ch; color: var(--ink-2); margin: 0; }
+  .lede { font-size: clamp(1.05rem, 2.2vw, 1.2rem); max-width: 48ch; color: #5E534D; margin: 0; }
 
   /* ---------- secoes ---------- */
-  section { padding-block: 50px; border-top: 1px solid var(--line); }
+  section { padding-block: 50px; border-top: 1px solid #E3DCD7; }
   h2 {
-    font-weight: 700; font-size: clamp(1.35rem, 3.2vw, 1.75rem);
+    font-weight: 700; font-size: clamp(1.35rem, 3.2vw, 1.75rem); color: #17120F;
     line-height: 1.16; letter-spacing: -0.024em; text-wrap: balance; margin: 0 0 10px;
     scroll-margin-top: calc(60px + env(safe-area-inset-top, 0px));
   }
-  .sub { font-size: 15.5px; color: var(--ink-2); margin: 0 0 30px; max-width: 58ch; }
+  .sub { font-size: 15.5px; color: #5E534D; margin: 0 0 30px; max-width: 58ch; }
   p { max-width: 640px; margin: 0 0 15px; }
   p:last-child { margin-bottom: 0; }
-  strong { font-weight: 600; color: var(--ink); }
+  strong { font-weight: 600; color: #17120F; }
 
   /* ---------- pacotes ---------- */
   .packs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
   .pack {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 3px;
+    background: #FFFFFF; border: 1px solid #E3DCD7; border-radius: 3px;
     padding: 26px 22px; display: grid; gap: 18px;
   }
-  .pack.pick { border-color: var(--accent, #C4122F); box-shadow: inset 0 0 0 1px var(--accent, #C4122F); }
-  .pack-tag { font-family: var(--mono); font-size: 11.5px; color: var(--accent, #C4122F); }
-  .pack-n { font-weight: 800; font-size: 2.5rem; line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
-  .pack-n span { display: block; font-weight: 500; font-size: 0.34em; letter-spacing: -0.005em; color: var(--ink-2); margin-top: 9px; }
-  .pack-price { font-family: var(--mono); font-weight: 500; font-size: 1.35rem; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .pack.pick { border-color: #C4122F; box-shadow: inset 0 0 0 1px #C4122F; }
+  .pack-tag { font-family: "Geist Mono", ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11.5px; color: #C4122F; }
+  .pack-n { font-weight: 800; font-size: 2.5rem; line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; color: #17120F; }
+  .pack-n span { display: block; font-weight: 500; font-size: 0.34em; letter-spacing: -0.005em; color: #5E534D; margin-top: 9px; }
+  .pack-price { font-family: "Geist Mono", ui-monospace, SFMono-Regular, Consolas, monospace; font-weight: 500; font-size: 1.35rem; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: #17120F; }
   .pack ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-  .pack li { font-size: 14.5px; line-height: 1.5; color: var(--ink-2); }
+  .pack li { font-size: 14.5px; line-height: 1.5; color: #5E534D; }
   .pack .cta { text-align: center; display: block; }
 
   /* ---------- unidade de publicacao ---------- */
   .unit { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .unit div { background: var(--surface); border: 1px solid var(--line); border-radius: 3px; padding: 24px 22px; }
-  .unit h3 { font-weight: 600; font-size: 1.02rem; margin: 0 0 10px; letter-spacing: -0.015em; }
-  .unit p { font-size: 15px; color: var(--ink-2); margin: 0; max-width: none; }
+  .unit div { background: #FFFFFF; border: 1px solid #E3DCD7; border-radius: 3px; padding: 24px 22px; }
+  .unit h3 { font-weight: 600; font-size: 1.02rem; margin: 0 0 10px; letter-spacing: -0.015em; color: #17120F; }
+  .unit p { font-size: 15px; color: #5E534D; margin: 0; max-width: none; }
 
   /* ---------- entregas ---------- */
   .deliver { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 40px; }
   .item { display: grid; gap: 6px; }
-  .item-k { font-weight: 600; font-size: 15.5px; letter-spacing: -0.012em; }
-  .item-v { font-size: 15px; color: var(--ink-2); line-height: 1.58; }
+  .item-k { font-weight: 600; font-size: 15.5px; letter-spacing: -0.012em; color: #17120F; }
+  .item-v { font-size: 15px; color: #5E534D; line-height: 1.58; }
 
   /* ---------- prova ---------- */
-  .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; margin-bottom: 26px; }
-  .proof div { background: var(--surface); padding: 22px 19px; }
-  .proof dt { font-family: var(--mono); font-weight: 500; font-size: 1.5rem; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; margin-bottom: 9px; }
-  .proof dd { font-size: 13px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+  .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #E3DCD7; border: 1px solid #E3DCD7; border-radius: 3px; overflow: hidden; margin-bottom: 26px; }
+  .proof div { background: #FFFFFF; padding: 22px 19px; }
+  .proof dt { font-family: "Geist Mono", ui-monospace, SFMono-Regular, Consolas, monospace; font-weight: 500; font-size: 1.5rem; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; margin-bottom: 9px; color: #17120F; }
+  .proof dd { font-size: 13px; line-height: 1.5; color: #5E534D; margin: 0; }
 
   /* ---------- nota curta ---------- */
-  .note { background: var(--accent-soft, #FAE8EA); border: 1px solid color-mix(in srgb, var(--accent, #C4122F) 26%, transparent); border-radius: 3px; padding: 24px 22px; }
-  .note h3 { font-weight: 700; font-size: 1rem; color: var(--accent, #C4122F); margin: 0 0 12px; letter-spacing: -0.015em; }
-  .note p { font-size: 15.5px; }
+  .note { background: #FAE8EA; border: 1px solid rgba(196, 18, 47, 0.26); border-radius: 3px; padding: 24px 22px; }
+  .note h3 { font-weight: 700; font-size: 1rem; color: #C4122F; margin: 0 0 12px; letter-spacing: -0.015em; }
+  .note p { font-size: 15.5px; color: #17120F; }
 
-  /* ---------- fechamento (unica inversao, deliberada) ---------- */
-  .close { background: var(--ink); color: var(--paper); border-radius: 3px; padding: 36px 30px; margin-top: 14px; }
-  .close h2 { color: var(--paper); margin-bottom: 14px; }
-  .close p { color: color-mix(in srgb, var(--paper) 74%, var(--ink)); }
+  /* ---------- fechamento ---------- */
+  .close { background: #17120F; border-radius: 3px; padding: 36px 30px; margin-top: 14px; }
+  .close h2 { color: #FBF9F7; margin-bottom: 14px; }
+  .close p { color: #C0BDBB; }
   .close .cta { margin-top: 24px; display: inline-block; font-size: 15px; padding: 13px 24px; }
 
-  footer { border-top: 1px solid var(--line); padding-block: 28px 48px; font-size: 13px; color: var(--ink-2); line-height: 1.8; }
+  footer { border-top: 1px solid #E3DCD7; padding-block: 28px 48px; font-size: 13px; color: #5E534D; line-height: 1.8; }
 
-  a:focus-visible { outline: 2px solid var(--accent, #C4122F); outline-offset: 3px; }
+  a:focus-visible { outline: 2px solid #C4122F; outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 
   @media (max-width: 820px) {
@@ -168,15 +137,8 @@
     section { padding-block: 40px; }
   }
 </style>
-<style>
-  html { color-scheme: light; }
-  body { margin: 0; }
-  img { max-width: 100%; }
-  [hidden] { display: none !important; }
-</style>
 </head>
 <body>
-
 <div class="bar">
   <div class="bar-in">
     <span class="bar-name">Pedro Munareto</span>
